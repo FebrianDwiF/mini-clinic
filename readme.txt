@@ -18,37 +18,62 @@ Dibangun sebagai Technical Assignment (Take Home Test) posisi Programmer.
 
 ```
 mini-clinic/
+│
 ├── backend/
 │   ├── middleware/
-│   │   ├── auth.js          # verifikasi JWT
-│   │   └── role.js          # otorisasi berdasarkan role
+│   │   ├── auth.js
+│   │   └── role.js
+│   │
 │   ├── routes/
-│   │   ├── auth.js          # POST /login, /logout
-│   │   ├── patients.js      # CRUD data pasien
-│   │   ├── doctors.js       # master data dokter
-│   │   ├── polis.js         # master data poli
-│   │   ├── registrations.js # pendaftaran kunjungan
-│   │   ├── queues.js        # modul antrean
-│   │   ├── medicalRecords.js# pemeriksaan dokter (SOAP)
-│   │   ├── prescriptions.js # resep obat
-│   │   └── dashboard.js     # ringkasan dashboard
-│   ├── database/
-│   │   └── schema.sql       # skema tabel database
-│   ├── db.js                 # koneksi pool MySQL
-│   ├── createUser.js         # script pembuatan user awal (hash password)
-│   ├── server.js              # entry point Express
-│   ├── .env.example
-│   └── package.json
+│   │   ├── auth.js
+│   │   ├── dashboard.js
+│   │   ├── doctors.js
+│   │   ├── medicalRecords.js
+│   │   ├── patients.js
+│   │   ├── polis.js
+│   │   ├── prescriptions.js
+│   │   ├── queues.js
+│   │   └── registrations.js
+│   │
+│   ├── .env
+│   ├── .gitignore
+│   ├── createUser.js
+│   ├── db.js
+│   ├── package.json
+│   ├── package-lock.json
+│   └── server.js
 │
 ├── frontend/
-│   └── ...                   # React.js app (lihat instruksi di dalam folder frontend)
+│   ├── public/
+│   │
+│   ├── src/
+│   │   ├── assets/
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── Dashboard.css
+│   │   │   ├── Login.jsx
+│   │   │   ├── MedicalRecords.jsx
+│   │   │   ├── Patients.jsx
+│   │   │   ├── Prescriptions.jsx
+│   │   │   ├── Queues.jsx
+│   │   │   └── Registrations.jsx
+│   │   │
+│   │   ├── App.jsx
+│   │   ├── App.css
+│   │   ├── index.css
+│   │   └── main.jsx
+│   │
+│   ├── .gitignore
+│   ├── package.json
+│   ├── package-lock.json
+│   └── vite.config.js
 │
-├── docs/
-│   ├── ERD.md                                # Entity Relationship Diagram
-│   ├── Mini_Clinic_API.postman_collection.json
-│   └── Mini_Clinic.postman_environment.json
-│
-└── README.md
+├── mini_clinic.sql
+├── ERD.png
+├── Mini-Clinic.postman_collection.json
+├── README.md
+└── .gitignore
 ```
 
 ## Role & Fitur
