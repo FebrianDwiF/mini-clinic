@@ -233,10 +233,24 @@ router.put(
 router.delete(
   "/:id",
   authenticateToken,
-  authorizeRoles("Administrator", "Petugas Pendaftaran"),
+  authorizeRoles("Administrator"),
   async (req, res) => {
     try {
       const { id } = req.params;
+
+      // Check whether patient has registration history
+      const [registrations] = await db.query(
+        "SELECT id FROM registrations WHERE patient_id = ? LIMIT 1",
+        [id],
+      );
+
+      if (registrations.length > 0) {
+        return res.status(400).json({
+          success: false,
+          message:
+            "Patient cannot be deleted because it has registration history",
+        });
+      }
 
       const [result] = await db.query("DELETE FROM patients WHERE id = ?", [
         id,
@@ -245,19 +259,20 @@ router.delete(
       if (result.affectedRows === 0) {
         return res.status(404).json({
           success: false,
-          message: "Pasien tidak ditemukan",
+          message: "Patient not found",
         });
       }
 
-      res.json({
+      return res.json({
         success: true,
-        message: "Pasien berhasil dihapus",
+        message: "Patient deleted successfully",
       });
     } catch (error) {
       console.error(error);
-      res.status(500).json({
+
+      return res.status(500).json({
         success: false,
-        message: "Gagal menghapus pasien",
+        message: "Internal server error",
       });
     }
   },
