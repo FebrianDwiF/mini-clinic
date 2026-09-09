@@ -1,0 +1,589 @@
+/* =========================================================
+   GLOBAL PAGE
+========================================================= */
+
+.page-container,
+.patients-page,
+.registrations-page,
+.prescriptions-page {
+  min-height: 100vh;
+  padding: 32px 40px;
+  background: #f5f7fb;
+  color: #172033;
+}
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.page-header h1 {
+  margin: 0;
+  color: #172033;
+  font-size: 30px;
+  font-weight: 750;
+  letter-spacing: -0.5px;
+}
+
+.page-header p {
+  margin: 6px 0 0;
+  color: #667085;
+  font-size: 14px;
+}
+
+/* =========================================================
+   TOP NAVIGATION
+========================================================= */
+
+.page-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e5eaf2;
+}
+
+.page-toolbar-left,
+.page-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn-primary,
+.btn-secondary,
+.btn-success,
+.btn-danger,
+.btn-outline {
+  border: none;
+  border-radius: 9px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+  box-shadow: 0 5px 14px rgba(37, 99, 235, 0.22);
+}
+
+.btn-secondary {
+  background: #eef2f7;
+  color: #344054;
+}
+
+.btn-secondary:hover {
+  background: #e2e8f0;
+}
+
+.btn-success {
+  background: #16a34a;
+  color: white;
+}
+
+.btn-success:hover {
+  background: #15803d;
+}
+
+.btn-danger {
+  background: #dc2626;
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #b91c1c;
+}
+
+.btn-outline {
+  background: white;
+  color: #344054;
+  border: 1px solid #d0d5dd;
+}
+
+.btn-outline:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e8edf4;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 22px;
+  box-shadow: var(--shadow-sm);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.card h2 {
+  margin: 0 0 18px;
+  color: #172033;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.card h3 {
+  margin: 22px 0 10px;
+  color: #344054;
+  font-size: 15px;
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 17px;
+}
+
+.form-group label,
+.card label,
+form > div > label {
+  color: #344054;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea,
+.card input,
+.card select,
+.card textarea,
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1px solid #d0d5dd;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #172033;
+  font-size: 14px;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+form {
+  color: #172033;
+}
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.form-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+/* =========================================================
+   SEARCH / TOOLBAR
+========================================================= */
+
+.search-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  position: relative;
+  flex: 1;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 12px 15px 12px 42px;
+  border: 1px solid #d0d5dd;
+  border-radius: 10px;
+  background: white;
+}
+
+.search-box::before {
+  content: "⌕";
+  position: absolute;
+  left: 16px;
+  top: 8px;
+  font-size: 21px;
+  color: #98a2b3;
+  pointer-events: none;
+}
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.table-container {
+  overflow-x: auto;
+  border: 1px solid #e5eaf2;
+  border-radius: 12px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  min-width: 760px;
+}
+
+th,
+td {
+  padding: 14px 15px;
+  border-bottom: 1px solid #edf0f5;
+  text-align: left;
+  vertical-align: middle;
+  font-size: 13px;
+}
+
+th {
+  background: #f8fafc;
+  color: #667085;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.35px;
+  white-space: nowrap;
+}
+
+td {
+  color: #344054;
+}
+
+tbody tr {
+  transition: background 0.15s ease;
+}
+
+tbody tr:hover {
+  background: #f8fafc;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.action-buttons button {
+  padding: 7px 11px;
+  border-radius: 7px;
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.status-menunggu {
+  background: #fff7d6;
+  color: #a16207;
+}
+
+.status-dipanggil {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.status-pemeriksaan {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+.status-check-in {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.status-selesai {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty-state {
+  text-align: center;
+  padding: 55px 20px;
+  color: #98a2b3;
+}
+
+.empty-state::before {
+  content: "○";
+  display: block;
+  margin-bottom: 8px;
+  font-size: 32px;
+}
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.pagination-info {
+  color: #667085;
+  font-size: 13px;
+}
+
+.pagination-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+/* =========================================================
+   INFO PATIENT
+========================================================= */
+
+.patient-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.patient-info-item {
+  padding: 15px;
+  background: #f8fafc;
+  border: 1px solid #edf0f5;
+  border-radius: 10px;
+}
+
+.patient-info-item span {
+  display: block;
+  margin-bottom: 4px;
+  color: #98a2b3;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.patient-info-item strong {
+  color: #172033;
+  font-size: 14px;
+}
+
+/* =========================================================
+   MEDICAL RECORD HISTORY
+========================================================= */
+
+.history-item {
+  padding: 20px;
+  margin-bottom: 14px;
+  background: #f8fafc;
+  border: 1px solid #e5eaf2;
+  border-radius: 12px;
+}
+
+.history-item:last-child {
+  margin-bottom: 0;
+}
+
+.history-item p {
+  margin-bottom: 9px;
+  line-height: 1.6;
+}
+
+.history-item strong {
+  color: #344054;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+  .page-container,
+  .patients-page,
+  .registrations-page,
+  .prescriptions-page {
+    padding: 24px 20px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .patient-info-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .page-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .patient-info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================================================
+   LOGIN
+========================================================= */
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(37, 99, 235, 0.14),
+      transparent 35%
+    ),
+    #f5f7fb;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 410px;
+  padding: 38px;
+  background: #ffffff;
+  border: 1px solid #e5eaf2;
+  border-radius: 18px;
+  box-shadow: 0 15px 45px rgba(15, 23, 42, 0.1);
+}
+
+.login-card h1 {
+  margin: 0;
+  color: #172033;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.login-card > p {
+  margin: 7px 0 30px;
+  color: #667085;
+  text-align: center;
+  font-size: 14px;
+}
+
+.login-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.login-card form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.login-card label {
+  color: #344054;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 12px 13px;
+  border: 1px solid #d0d5dd;
+  border-radius: 9px;
+  background: white;
+  color: #172033;
+}
+
+.login-card button[type="submit"] {
+  margin-top: 5px;
+  padding: 12px;
+  border: none;
+  border-radius: 9px;
+  background: #2563eb;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.login-card button[type="submit"]:hover {
+  background: #1d4ed8;
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.22);
+}
