@@ -269,14 +269,10 @@ Beberapa asumsi/penyederhanaan yang diambil dalam implementasi backend ini:
 Pastikan development dilakukan dengan beberapa commit bertahap (bukan 1 commit di akhir), contoh alur commit yang disarankan:
 
 ```
-feat: setup express server & db connection
-feat: implement JWT auth (login, logout, middleware)
-feat: CRUD master data pasien
-feat: modul pendaftaran pasien
-feat: modul antrean
-feat: modul pemeriksaan dokter (SOAP) & resep
-feat: dashboard summary endpoint
-feat: setup frontend react + routing
-feat: integrasi frontend-backend per modul
-docs: README, ERD, postman collection
+feat: complete Mini Clinic information system
+fix: restrict patient deletion to administrator
+docs: add database schema
+docs: add ERD
+docs: add Postman collection
+docs: add project README
 ```
