@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{base_url}}/queues/{{queue_id}}/call"
+method: PUT
+order: 3000

@@ -1,0 +1,12 @@
+$kind: http-request
+url: "{{base_url}}/registrations/{{registration_id}}/status"
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "status": "Pemeriksaan"
+    }
+order: 4000

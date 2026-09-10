@@ -1,0 +1,25 @@
+$kind: http-request
+url: "{{base_url}}/registrations"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "patient_id": {{patient_id}},
+      "doctor_id": 1,
+      "poli_id": 1,
+      "visit_date": "2026-09-09",
+      "payment_type": "Umum",
+      "initial_complaint": "Demam dan batuk"
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      let json = pm.response.json();
+      if (json.success && json.data && json.data.id) {
+          pm.collectionVariables.set('registration_id', json.data.id);
+      }
+    language: text/javascript
+order: 2000

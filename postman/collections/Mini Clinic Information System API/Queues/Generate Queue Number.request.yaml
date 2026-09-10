@@ -1,0 +1,20 @@
+$kind: http-request
+url: "{{base_url}}/queues"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "registration_id": {{registration_id}}
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      let json = pm.response.json();
+      if (json.success && json.data && json.data.id) {
+          pm.collectionVariables.set('queue_id', json.data.id);
+      }
+    language: text/javascript
+order: 2000

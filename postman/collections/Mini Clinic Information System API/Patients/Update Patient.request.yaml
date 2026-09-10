@@ -1,0 +1,16 @@
+$kind: http-request
+url: "{{base_url}}/patients/{{patient_id}}"
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "name": "Budi Santoso Update",
+      "gender": "L",
+      "date_of_birth": "1995-05-10",
+      "phone": "081234567891",
+      "address": "Jl. Merdeka No. 2, Sidoarjo"
+    }
+order: 4000

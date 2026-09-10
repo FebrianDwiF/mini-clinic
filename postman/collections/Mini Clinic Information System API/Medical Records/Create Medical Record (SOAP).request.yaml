@@ -1,0 +1,20 @@
+$kind: http-request
+url: "{{base_url}}/medical-records"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "registration_id": {{registration_id}},
+      "subjective": "Pasien mengeluh demam dan batuk sejak 3 hari",
+      "blood_pressure": "120/80",
+      "temperature": 37.8,
+      "weight": 60,
+      "height": 165,
+      "assessment": "ISPA",
+      "plan": "Istirahat, banyak minum air, kontrol jika demam tidak turun",
+      "medical_action": "Pemeriksaan fisik dan tanda vital"
+    }
+order: 2000

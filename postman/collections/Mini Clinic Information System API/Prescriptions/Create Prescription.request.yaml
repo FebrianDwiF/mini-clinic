@@ -1,0 +1,16 @@
+$kind: http-request
+url: "{{base_url}}/prescriptions"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "registration_id": {{registration_id}},
+      "medicine_name": "Paracetamol 500mg",
+      "dosage": "3x1 tablet",
+      "quantity": 10,
+      "instructions": "Diminum setelah makan"
+    }
+order: 3000

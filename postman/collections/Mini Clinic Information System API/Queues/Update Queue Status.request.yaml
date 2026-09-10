@@ -1,0 +1,12 @@
+$kind: http-request
+url: "{{base_url}}/queues/{{queue_id}}/status"
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "status": "Selesai"
+    }
+order: 4000

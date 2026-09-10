@@ -1,0 +1,25 @@
+$kind: http-request
+url: "{{base_url}}/patients"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "nik": "3512011234560001",
+      "name": "Budi Santoso",
+      "gender": "L",
+      "date_of_birth": "1995-05-10",
+      "phone": "081234567890",
+      "address": "Jl. Merdeka No. 1, Sidoarjo"
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      let json = pm.response.json();
+      if (json.success && json.data && json.data.id) {
+          pm.collectionVariables.set('patient_id', json.data.id);
+      }
+    language: text/javascript
+order: 3000

@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{base_url}}/prescriptions/registration/{{registration_id}}"
+method: GET
+order: 1000

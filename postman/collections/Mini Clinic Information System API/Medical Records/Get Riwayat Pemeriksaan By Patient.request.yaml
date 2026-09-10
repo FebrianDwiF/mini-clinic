@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{base_url}}/medical-records/{{patient_id}}"
+method: GET
+order: 1000
