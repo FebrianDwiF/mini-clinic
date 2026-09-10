@@ -226,14 +226,10 @@ Semua response mengikuti format standar:
 
 ### Cara Membuat/Meng-generate Postman Collection dari Backend Sendiri
 
-Kalau ke depannya Anda menambah endpoint dan ingin re-generate collection sendiri, ada beberapa cara umum:
-
 1. **Manual (paling umum untuk assignment seperti ini)** — buat request satu per satu di Postman sesuai route yang ada di `routes/*.js`, kelompokkan per folder (Auth, Patients, dst), lalu **Export** collection: klik collection → `...` → **Export** → pilih format **Collection v2.1**.
 2. **Capture otomatis lewat Postman Interceptor / Proxy** — aktifkan Postman Interceptor (atau proxy capture di Postman Desktop), lalu jalankan aplikasi frontend/Postman dan hit setiap endpoint backend Anda secara manual sekali. Postman akan otomatis mencatat request-request tersebut ke dalam History yang bisa langsung di-**Save** ke sebuah Collection.
 3. **Generate dari OpenAPI/Swagger spec** — jika backend dilengkapi dokumentasi Swagger (misal dengan `swagger-jsdoc` + `swagger-ui-express`), Postman bisa **Import** langsung file `swagger.json`/`openapi.yaml` dan otomatis membuat semua request-nya. Backend project ini belum memakai Swagger, jadi opsi ini butuh setup tambahan.
 4. **Generate dari daftar route Express** — pakai package seperti `express-list-routes` untuk mencetak semua route yang terdaftar di `server.js`, sebagai checklist untuk memastikan collection manual Anda sudah mencakup semua endpoint.
-
-Untuk kebutuhan submission assignment ini, collection yang sudah disediakan (`docs/Mini_Clinic_API.postman_collection.json`) sudah mencakup seluruh endpoint minimum yang diminta di dokumen technical assignment (Auth, Patient, Registration, Queue, Medical Record, Prescription) plus beberapa endpoint tambahan (Doctors, Polis, Dashboard) yang memang dipakai di kode.
 
 ## Entity Relationship Diagram (ERD)
 
@@ -249,7 +245,7 @@ Ringkasan relasi:
 
 ## Asumsi & Penyederhanaan Proses Bisnis
 
-Beberapa asumsi/penyederhanaan yang diambil dalam implementasi backend ini:
+Beberapa yang diambil dalam implementasi backend ini:
 
 1. **Format nomor antrean** — dokumen assignment mencontohkan format `A001`, `A002`. Implementasi saat ini menyimpan `queue_number` sebagai **integer polos** (1, 2, 3, ...) per kombinasi poli & tanggal kunjungan. Jika format string `A001` wajib ditampilkan, bisa ditambahkan formatting di response API (`"A" + String(queue_number).padStart(3, "0")`) tanpa mengubah struktur database.
 2. **Relasi Registrasi–Antrean dibuat 1:1** — satu pendaftaran hanya bisa memiliki satu nomor antrean (di-enforce lewat kolom `UNIQUE` pada `queues.registration_id` serta validasi di endpoint `POST /queues`).
@@ -265,8 +261,6 @@ Beberapa asumsi/penyederhanaan yang diambil dalam implementasi backend ini:
 - Autentikasi (`middleware/auth.js`) mengembalikan 401 jika token tidak ada/tidak valid; otorisasi (`middleware/role.js`) mengembalikan 403 jika role tidak diizinkan.
 
 ## Git Commit History
-
-Pastikan development dilakukan dengan beberapa commit bertahap (bukan 1 commit di akhir), contoh alur commit yang disarankan:
 
 ```
 feat: complete Mini Clinic information system
